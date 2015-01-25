@@ -18,7 +18,7 @@ namespace Starvation
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new Starve())
                 game.Run();
         }
     }
