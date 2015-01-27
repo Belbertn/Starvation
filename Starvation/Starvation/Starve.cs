@@ -94,7 +94,7 @@ namespace Starvation
 
             // TODO: Add your drawing code here
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.Transform);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, cam.Transform);
             gameState.Draw(spriteBatch);
             spriteBatch.End();
 
