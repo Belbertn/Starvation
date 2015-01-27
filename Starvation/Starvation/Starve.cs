@@ -13,14 +13,16 @@ namespace Starvation
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-       
+
+        IGameState gameState;
+
+        Camera2D cam { get; set; }
 
         public Starve()
             : base()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            
+            Content.RootDirectory = "Content"; 
         }
 
         /// <summary>
@@ -32,6 +34,10 @@ namespace Starvation
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            gameState = new InGame();
+
+            cam = new Camera2D(GraphicsDevice.Viewport);
 
             base.Initialize();
         }
@@ -46,6 +52,8 @@ namespace Starvation
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            gameState.Load(this.Content);
         }
 
         /// <summary>
@@ -69,6 +77,10 @@ namespace Starvation
 
             // TODO: Add your update logic here
 
+            gameState.Update(this, gameTime);
+
+            cam.Update();
+
             base.Update(gameTime);
         }
 
@@ -81,6 +93,10 @@ namespace Starvation
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, null, null, null, null, cam.Transform);
+            gameState.Draw(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

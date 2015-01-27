@@ -38,7 +38,11 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Camera2D.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="IGameState.cs" />
+    <Compile Include="InGame.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Starve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
