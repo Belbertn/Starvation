@@ -42,6 +42,7 @@
     <Compile Include="IEntity.cs" />
     <Compile Include="IGameState.cs" />
     <Compile Include="InGame.cs" />
+    <Compile Include="InputManager.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Starve.cs" />
     <Compile Include="Program.cs" />
