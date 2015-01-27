@@ -12,20 +12,32 @@ namespace Starvation
 {
     class InGame : IGameState
     {
-        Player player = new Player();
+        public List<IEntity> entities { get; set; }
         public void Load(ContentManager content)
         {
-            player.Load(content);
+            entities = new List<IEntity>();
+            entities.Add(new Player());
+
+            foreach(IEntity entity in entities)
+            {
+                entity.Load(content);
+            }
         }
 
         public void Update(Starve g, GameTime gameTime)
         {
-            player.Update(g, gameTime);
+            foreach (IEntity entity in entities)
+            {
+                entity.Update(g, gameTime);
+            }            
         }
         
         public void Draw(SpriteBatch spriteBatch)
         {
-            player.Draw(spriteBatch);
+            foreach (IEntity entity in entities)
+            {
+                entity.Draw(spriteBatch);
+            }
         }
     }
 }
