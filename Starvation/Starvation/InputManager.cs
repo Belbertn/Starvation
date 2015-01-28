@@ -39,7 +39,7 @@ namespace Starvation
 
         public bool WasKeyPressed(Keys key)
         {
-            if(previousState.Contains<Keys>(key))
+            if(previousState.Contains<Keys>(key) && !currentState.Contains<Keys>(key))
             {
                 return true;
             }
