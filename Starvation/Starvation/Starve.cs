@@ -16,7 +16,7 @@ namespace Starvation
 
         IGameState gameState;
 
-        Camera2D cam { get; set; }
+        public Camera2D camera { get; set; }
 
         public InputManager InManager { get; set; }
 
@@ -39,7 +39,7 @@ namespace Starvation
 
             gameState = new InGame();
 
-            cam = new Camera2D(GraphicsDevice.Viewport);
+            camera = new Camera2D(GraphicsDevice.Viewport);
 
             InManager = new InputManager();
 
@@ -83,7 +83,7 @@ namespace Starvation
 
             gameState.Update(this, gameTime);
 
-            cam.Update();
+            camera.Update(this);
 
             InManager.Update();
 
@@ -100,7 +100,7 @@ namespace Starvation
 
             // TODO: Add your drawing code here
 
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, cam.Transform);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.Transform);
             gameState.Draw(spriteBatch);
             spriteBatch.End();
 
