@@ -12,7 +12,7 @@ namespace Starvation
         private Keys[] previousState;
         private Keys[] currentState;
 
-        public void Initialize()
+        public InputManager()
         {
             previousState = new KeyboardState().GetPressedKeys();
         }
@@ -48,5 +48,7 @@ namespace Starvation
                 return false;
             }
         }
+
+
     }
 }

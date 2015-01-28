@@ -18,6 +18,8 @@ namespace Starvation
 
         Camera2D cam { get; set; }
 
+        public InputManager InManager { get; set; }
+
         public Starve()
             : base()
         {
@@ -38,6 +40,8 @@ namespace Starvation
             gameState = new InGame();
 
             cam = new Camera2D(GraphicsDevice.Viewport);
+
+            InManager = new InputManager();
 
             base.Initialize();
         }
@@ -80,6 +84,8 @@ namespace Starvation
             gameState.Update(this, gameTime);
 
             cam.Update();
+
+            InManager.Update();
 
             base.Update(gameTime);
         }

@@ -18,8 +18,6 @@ namespace Starvation
             entities = new List<IEntity>();
             entities.Add(new Player());
 
-            entities.Add(new Tree());
-
             foreach(IEntity entity in entities)
             {
                 entity.Load(content);
