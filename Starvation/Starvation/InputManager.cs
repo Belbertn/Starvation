@@ -7,27 +7,28 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Starvation
 {
-    class InputManager
+    public class InputManager
     {
-        private Keys[] previousState;
-        private Keys[] currentState;
+        private KeyboardState previousState;
+        private KeyboardState currentState;
 
         public InputManager()
         {
-            previousState = new KeyboardState().GetPressedKeys();
-        }
-
-        public void Update()
-        {
-            currentState = new KeyboardState().GetPressedKeys();
-
+            currentState = Keyboard.GetState();
 
             previousState = currentState;
         }
 
+        public void Update()
+        {
+            previousState = currentState;
+
+            currentState = Keyboard.GetState();
+        }
+
         public bool IsKeyPressed(Keys key)
         {
-            if(currentState.Contains<Keys>(key))
+            if(currentState.IsKeyDown(key))
             {
                 return true;
             }
@@ -39,7 +40,8 @@ namespace Starvation
 
         public bool WasKeyPressed(Keys key)
         {
-            if(previousState.Contains<Keys>(key) && !currentState.Contains<Keys>(key))
+            
+            if(previousState.IsKeyDown(key) && currentState.IsKeyUp(key))
             {
                 return true;
             }

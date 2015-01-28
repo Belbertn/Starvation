@@ -29,33 +29,36 @@ namespace Starvation
 
         public void Update(Starve g, GameTime gameTime)
         {
-            Input();
+            Input(g);
+            
             
         }
 
-        private void Input()
+        private void Input(Starve g)
         {
-            KeyboardState keyState = Keyboard.GetState();
 
-            if(keyState.IsKeyDown(Keys.W))
+            if (g.InManager.IsKeyPressed(Keys.W))
             {
                 Position = new Vector2(Position.X, Position.Y - 10);
             }
 
-            if (keyState.IsKeyDown(Keys.A))
+            if (g.InManager.IsKeyPressed(Keys.A))
             {
                 Position = new Vector2(Position.X - 10, Position.Y);
             }
 
-            if (keyState.IsKeyDown(Keys.S))
+            if (g.InManager.IsKeyPressed(Keys.S))
             {
                 Position = new Vector2(Position.X, Position.Y + 10);
             }
 
-            if (keyState.IsKeyDown(Keys.D))
+            if (g.InManager.IsKeyPressed(Keys.D))
             {
                 Position = new Vector2(Position.X + 10, Position.Y);
             }
+
+
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
