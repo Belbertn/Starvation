@@ -31,7 +31,7 @@ namespace Starvation
         {
             Input(g);
 
-            g.camera.Position = new Vector2(this.Position.X, this.Position.Y);
+            
         }
 
         private void Input(Starve g)
