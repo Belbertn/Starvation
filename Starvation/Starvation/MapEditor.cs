@@ -11,7 +11,6 @@ namespace Starvation
 {
     class MapEditor : IGameState
     {
-
         
         public void Load(ContentManager content)
         {
