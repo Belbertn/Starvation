@@ -40,7 +40,6 @@ namespace Starvation
 
         public bool WasKeyPressed(Keys key)
         {
-            
             if(previousState.IsKeyDown(key) && currentState.IsKeyUp(key))
             {
                 return true;
@@ -51,6 +50,16 @@ namespace Starvation
             }
         }
 
-
+        public bool WasKeyUp(Keys key)
+        {
+            if(currentState.IsKeyDown(key) && previousState.IsKeyUp(key))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Starvation
 {
     interface IGameState
     {
-        void Load(ContentManager content);
+        void Load(Starve g);
         void Update(Starve g, GameTime gameTime);
         void Draw(SpriteBatch spriteBatch);
     }

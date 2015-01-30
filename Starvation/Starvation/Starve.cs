@@ -57,7 +57,7 @@ namespace Starvation
 
             // TODO: use this.Content to load your game content here
 
-            gameState.Load(this.Content);
+            gameState.Load(this);
         }
 
         /// <summary>
