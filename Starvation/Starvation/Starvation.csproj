@@ -38,6 +38,8 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Asset.cs" />
+    <Compile Include="AssetManager.cs" />
     <Compile Include="Camera2D.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IGameState.cs" />
