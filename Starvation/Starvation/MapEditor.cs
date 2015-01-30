@@ -12,14 +12,14 @@ namespace Starvation
     class MapEditor : IGameState
     {
         
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
             
         }
 
         public void Update(Starve g, GameTime gameTime)
         {
-
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)

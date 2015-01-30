@@ -11,7 +11,7 @@ namespace Starvation
 {
     class MainMenu : IGameState
     {
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
 
         }

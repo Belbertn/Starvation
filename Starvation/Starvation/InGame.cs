@@ -13,7 +13,7 @@ namespace Starvation
     class InGame : IGameState
     {
         public List<IEntity> entities { get; set; }
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
             entities = new List<IEntity>();
             entities.Add(new Player());
@@ -22,7 +22,7 @@ namespace Starvation
 
             foreach(IEntity entity in entities)
             {
-                entity.Load(content);
+                entity.Load(g.Content);
             }
         }
 
