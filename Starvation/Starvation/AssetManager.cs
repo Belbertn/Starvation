@@ -12,12 +12,12 @@ namespace Starvation
 {
     class AssetManager
     {
-        private Texture2D spriteSheet;
+        public Texture2D SpriteSheet { get; set; }
         private List<Asset> assets = new List<Asset>();
 
         public void Load(Starve g)
         {
-            spriteSheet = g.Content.Load<Texture2D>("SpriteSheet");
+            SpriteSheet = g.Content.Load<Texture2D>("SpriteSheet");
 
             CreateAssets(DivideLines());
 
@@ -70,6 +70,21 @@ namespace Starvation
 
                 assets.Add(new Asset(name, height, width, length, new Vector2(xPos, yPos)));
             }
+        }
+
+        public Asset GetAssetData(string assetName)
+        {
+            Asset asset = null;
+
+            foreach(Asset a in assets)
+            {
+                if (a.AssetName == assetName)
+                {
+                    asset = a;
+                }
+            }
+
+            return asset;
         }
     }
 }

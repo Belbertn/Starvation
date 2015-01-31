@@ -11,7 +11,11 @@ namespace Starvation
 {
     class MapEditor : IGameState
     {
-        AssetManager assetMan = new AssetManager();
+        private Texture2D spriteSheet;
+        private Asset dirt;
+        private Asset grass;
+        private AssetManager assetMan = new AssetManager();
+
         public void Load(Starve g)
         {
             assetMan.Load(g);
