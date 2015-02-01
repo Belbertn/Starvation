@@ -19,6 +19,9 @@ namespace Starvation
         public void Load(Starve g)
         {
             assetMan.Load(g);
+            spriteSheet = assetMan.SpriteSheet;
+            grass = assetMan.GetAssetData("Grass");
+            dirt = assetMan.GetAssetData("Dirt");
         }
 
         public void Update(Starve g, GameTime gameTime)
@@ -28,7 +31,8 @@ namespace Starvation
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            
+            
         }
     }
 }

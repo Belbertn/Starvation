@@ -20,11 +20,6 @@ namespace Starvation
             SpriteSheet = g.Content.Load<Texture2D>("SpriteSheet");
 
             CreateAssets(DivideLines());
-
-            foreach (Asset ass in assets)
-            {
-                Console.WriteLine(ass.Height);
-            }
         }
 
         private string[] DivideLines()
