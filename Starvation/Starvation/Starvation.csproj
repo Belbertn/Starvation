@@ -41,6 +41,7 @@
     <Compile Include="Asset.cs" />
     <Compile Include="AssetManager.cs" />
     <Compile Include="Camera2D.cs" />
+    <Compile Include="Grid.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IGameState.cs" />
     <Compile Include="InGame.cs" />
@@ -49,7 +50,7 @@
     <Compile Include="Map.cs" />
     <Compile Include="MapEditor.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="Square.cs" />
+    <Compile Include="GUI\Square.cs" />
     <Compile Include="Starve.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

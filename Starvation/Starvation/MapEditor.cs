@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
+using Starvation.GUI;
+
 namespace Starvation
 {
     class MapEditor : IGameState
@@ -18,6 +20,8 @@ namespace Starvation
 
         public void Load(Starve g)
         {
+            Square s = new Square(g, new Rectangle(), 3, Color.Wheat);
+
             assetMan.Load(g);
             spriteSheet = assetMan.SpriteSheet;
             grass = assetMan.GetAssetData("Grass");
