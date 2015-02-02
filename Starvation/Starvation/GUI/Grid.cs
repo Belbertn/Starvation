@@ -7,10 +7,25 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Starvation
+namespace Starvation.GUI
 {
-    class Grid
+    class Grid : IUserInterface
     {
+        private Rectangle rect;
 
+        public Grid(int lines, int columns, int squareSizeX, int squareSizeY)
+        {
+
+        }
+
+        public void Update()
+        {
+
+        }
+
+        public void Draw()
+        {
+
+        }
     }
 }

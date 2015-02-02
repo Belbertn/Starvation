@@ -6,9 +6,9 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Starvation.GUI
+namespace Starvation.GUI 
 {
-    class Square
+    class Square : IUserInterface
     {
         private Texture2D pixel;
 
