@@ -22,7 +22,7 @@ namespace Starvation
 
             foreach(IEntity entity in entities)
             {
-                entity.Load(g.Content);
+                entity.Load(g);
             }
         }
 

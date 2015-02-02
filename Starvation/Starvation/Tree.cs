@@ -19,12 +19,12 @@ namespace Starvation
         private string AssetName { get; set; }
         private Texture2D treeSprite;
 
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
             Position = new Vector2(40, 40);
 
             AssetName = "Tree";
-            treeSprite = content.Load<Texture2D>(AssetName);
+            treeSprite = g.Content.Load<Texture2D>(AssetName);
         }
 
         public void Update(Starve g, GameTime gameTime)

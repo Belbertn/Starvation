@@ -42,6 +42,7 @@
     <Compile Include="AssetManager.cs" />
     <Compile Include="Camera2D.cs" />
     <Compile Include="Grid.cs" />
+    <Compile Include="GUI\IUserInterface.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IGameState.cs" />
     <Compile Include="InGame.cs" />
