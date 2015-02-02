@@ -12,13 +12,13 @@ namespace Starvation.GUI
     {
         private Texture2D pixel;
 
-        private Rectangle rect = new Rectangle(0, 0, 100, 100);
+        public Rectangle area { get; set; }
         private int width;
         private Color col;
 
-        public Square(Starve g, Rectangle rectangle, int thickness, Color color)
+        public Square(Starve g, Rectangle Rectangle, int thickness, Color color)
         {
-            rect = rectangle;
+            area = new Rectangle(Rectangle.X * 32, Rectangle.Y * 32, Rectangle.Width, Rectangle.Height);
             width = thickness;
             col = color;
 
@@ -26,16 +26,21 @@ namespace Starvation.GUI
             pixel.SetData(new[] { Color.White });
         }
 
+        public void Update(Starve g , GameTime gameTime)
+        {
+            
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             //Top
-            spriteBatch.Draw(pixel, new Rectangle(rect.X, rect.Y, rect.Width, width), col);
+            spriteBatch.Draw(pixel, new Rectangle(area.X, area.Y, area.Width, width), col);
             //Left
-            spriteBatch.Draw(pixel, new Rectangle(rect.X, rect.Y, width, rect.Width), col);
+            spriteBatch.Draw(pixel, new Rectangle(area.X, area.Y, width, area.Width), col);
             //Right
-            spriteBatch.Draw(pixel, new Rectangle((rect.X + rect.Width - width), rect.Y, width, rect.Height), col);
+            spriteBatch.Draw(pixel, new Rectangle((area.X + area.Width - width), area.Y, width, area.Height), col);
             //Bottom
-            spriteBatch.Draw(pixel, new Rectangle(rect.X, rect.Y + rect.Height - width, rect.Width, width), col);
+            spriteBatch.Draw(pixel, new Rectangle(area.X, area.Y + area.Height - width, area.Width, width), col);
         }
     }
 }

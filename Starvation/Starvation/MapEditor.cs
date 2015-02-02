@@ -18,9 +18,11 @@ namespace Starvation
         private Asset grass;
         private AssetManager assetMan = new AssetManager();
 
+        public static List<IUserInterface> UIElements = new List<IUserInterface>();
+
         public void Load(Starve g)
         {
-            Square s = new Square(g, new Rectangle(), 3, Color.Wheat);
+            UIElements.Add(new Grid(g, 50, 50, 32, 32, 1, Color.White));
 
             assetMan.Load(g);
             spriteSheet = assetMan.SpriteSheet;
@@ -30,13 +32,18 @@ namespace Starvation
 
         public void Update(Starve g, GameTime gameTime)
         {
-            
+            foreach (IUserInterface ui in UIElements)
+            {
+                ui.Update(g, gameTime);
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
-            
+            foreach (IUserInterface ui in UIElements)
+            {
+                ui.Draw(spriteBatch);
+            }   
         }
     }
 }

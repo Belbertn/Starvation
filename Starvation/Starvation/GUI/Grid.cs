@@ -11,21 +11,47 @@ namespace Starvation.GUI
 {
     class Grid : IUserInterface
     {
-        private Rectangle rect;
+        public Rectangle area { get; set; }
 
-        public Grid(int lines, int columns, int squareSizeX, int squareSizeY)
+        private int lines;
+        private int columns;
+        private int squareSizeX;
+        private int squareSizeY;
+        private int thick;
+        private Color color;
+
+        public Grid(Starve g, int lines, int columns, int squareSizeX, int squareSizeY, int thickness, Color color)
+        {
+            this.lines = lines;
+            this.columns = columns;
+            this.squareSizeX = squareSizeX;
+            this.squareSizeY = squareSizeY;
+            this.thick = thickness;
+            this.color = color;
+
+            CreateGrid(g);
+        }
+
+        public void Update(Starve g, GameTime gameTime)
         {
 
         }
 
-        public void Update()
+        public void Draw(SpriteBatch spriteBatch)
         {
 
         }
 
-        public void Draw()
+        private void CreateGrid(Starve g)
         {
-
+            for(int x = 0; x < lines; x++)
+            {
+                for(int y = 0; y < columns; y++)
+                {
+                    Square temp = new Square(g, new Rectangle(x, y, squareSizeX, squareSizeY), thick, color);
+                    MapEditor.UIElements.Add(temp);
+                }
+            }
         }
     }
 }
