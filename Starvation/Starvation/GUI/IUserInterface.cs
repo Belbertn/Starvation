@@ -11,7 +11,9 @@ namespace Starvation.GUI
 {
     interface IUserInterface
     {
-        void Load(Starve g);
-        void Update();
+        Rectangle area { get; set; }
+        Vector2 Position { get; set; }
+        void Update(Starve g, GameTime gameTime);
+        void Draw(SpriteBatch spriteBatch);
     }
 }
