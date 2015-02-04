@@ -15,6 +15,6 @@ namespace Starvation
         Vector2 Position { get; set; }
         void Load(Starve g);
         void Update(Starve g, GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(Starve g);
     }
 }

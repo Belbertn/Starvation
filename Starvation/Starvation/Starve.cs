@@ -12,7 +12,7 @@ namespace Starvation
     public class Starve : Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public SpriteBatch spriteBatch;
 
         IGameState gameState;
 
@@ -101,7 +101,7 @@ namespace Starvation
             // TODO: Add your drawing code here
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.Transform);
-            gameState.Draw(spriteBatch);
+            gameState.Draw(this);
             spriteBatch.End();
 
             base.Draw(gameTime);

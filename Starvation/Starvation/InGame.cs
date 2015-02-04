@@ -34,11 +34,11 @@ namespace Starvation
             }            
         }
         
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
             foreach (IEntity entity in entities)
             {
-                entity.Draw(spriteBatch);
+                entity.Draw(g);
             }
         }
     }

@@ -21,7 +21,7 @@ namespace Starvation
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
 
         }

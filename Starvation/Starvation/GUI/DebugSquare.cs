@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Starvation.GUI 
 {
-    class Square : IUserInterface
+    class DebugSquare
     {
         private Texture2D pixel;
 
@@ -16,7 +16,7 @@ namespace Starvation.GUI
         private int width;
         private Color col;
 
-        public Square(Starve g, Rectangle Rectangle, int thickness, Color color)
+        public DebugSquare(Starve g, Rectangle Rectangle, int thickness, Color color)
         {
             area = new Rectangle(Rectangle.X * 32, Rectangle.Y * 32, Rectangle.Width, Rectangle.Height);
             width = thickness;

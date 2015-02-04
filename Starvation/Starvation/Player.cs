@@ -61,9 +61,9 @@ namespace Starvation
             
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
-            spriteBatch.Draw(playerSprite, Position, Color.White);
+            g.spriteBatch.Draw(playerSprite, Position, Color.White);
         }
     }
 }

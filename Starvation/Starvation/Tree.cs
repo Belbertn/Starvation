@@ -32,9 +32,9 @@ namespace Starvation
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
-            spriteBatch.Draw(treeSprite, Position, Color.White);
+            g.spriteBatch.Draw(treeSprite, Position, Color.White);
         }
     }
 }

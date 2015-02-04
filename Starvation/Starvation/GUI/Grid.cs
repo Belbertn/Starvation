@@ -37,7 +37,7 @@ namespace Starvation.GUI
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
 
         }
@@ -48,8 +48,7 @@ namespace Starvation.GUI
             {
                 for(int y = 0; y < columns; y++)
                 {
-                    Square temp = new Square(g, new Rectangle(x, y, squareSizeX, squareSizeY), thick, color);
-                    MapEditor.UIElements.Add(temp);
+                    
                 }
             }
         }

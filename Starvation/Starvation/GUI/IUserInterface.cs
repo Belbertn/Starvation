@@ -13,6 +13,6 @@ namespace Starvation.GUI
     {
         Rectangle area { get; set; }
         void Update(Starve g, GameTime gameTime);
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(Starve g);
     }
 }
