@@ -42,6 +42,7 @@
     <Compile Include="AssetManager.cs" />
     <Compile Include="Camera2D.cs" />
     <Compile Include="GUI\Grid.cs" />
+    <Compile Include="GUI\GridElement.cs" />
     <Compile Include="GUI\IUserInterface.cs" />
     <Compile Include="GUI\UIElement.cs" />
     <Compile Include="IEntity.cs" />
