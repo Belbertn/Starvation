@@ -40,7 +40,7 @@ namespace Starvation
             // TODO: Add your initialization logic here
             assetManager = new AssetManager();
 
-            gameState = new InGame();
+            gameState = new MapEditor();
 
             camera = new Camera2D(GraphicsDevice.Viewport);
 
