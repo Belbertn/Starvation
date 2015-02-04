@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -17,14 +16,16 @@ namespace Starvation
         public string tag = "Tree";
 
         private string AssetName { get; set; }
-        private Texture2D treeSprite;
+
+        public Asset asset { get; set; }
 
         public void Load(Starve g)
         {
             Position = new Vector2(40, 40);
 
             AssetName = "Tree";
-            treeSprite = g.Content.Load<Texture2D>(AssetName);
+
+            asset = g.assetManager.GetAssetData(AssetName);
         }
 
         public void Update(Starve g, GameTime gameTime)
@@ -34,7 +35,7 @@ namespace Starvation
 
         public void Draw(Starve g)
         {
-            g.spriteBatch.Draw(treeSprite, Position, Color.White);
+            g.spriteBatch.Draw(asset.Texture, Position,new Rectangle((int)asset.Position.X, (int)asset.Position.Y, asset.Width, asset.Height), Color.White);
         }
     }
 }

@@ -14,6 +14,8 @@ namespace Starvation
         GraphicsDeviceManager graphics;
         public SpriteBatch spriteBatch;
 
+        public AssetManager assetManager { get; set; }
+
         IGameState gameState;
 
         public Camera2D camera { get; set; }
@@ -36,8 +38,9 @@ namespace Starvation
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            assetManager = new AssetManager();
 
-            gameState = new MapEditor();
+            gameState = new InGame();
 
             camera = new Camera2D(GraphicsDevice.Viewport);
 
@@ -56,6 +59,8 @@ namespace Starvation
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            assetManager.Load(this);
 
             gameState.Load(this);
         }

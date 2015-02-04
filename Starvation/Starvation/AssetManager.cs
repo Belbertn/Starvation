@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace Starvation
 {
-    class AssetManager
+    public class AssetManager
     {
         public Texture2D SpriteSheet { get; set; }
         private List<Asset> assets = new List<Asset>();
@@ -63,7 +63,7 @@ namespace Starvation
                     yPos = Convert.ToSingle(properties[5]);
                 }
 
-                assets.Add(new Asset(name, height, width, length, new Vector2(xPos, yPos)));
+                assets.Add(new Asset(name, height, width, length, new Vector2(xPos, yPos), SpriteSheet));
             }
         }
 

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,6 +12,7 @@ namespace Starvation
     interface IEntity
     {
         Vector2 Position { get; set; }
+        Asset asset { get; set; }
         void Load(Starve g);
         void Update(Starve g, GameTime gameTime);
         void Draw(Starve g);
