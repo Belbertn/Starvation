@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Starvation
 {
     class MainMenu : IGameState
     {
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
 
         }
@@ -21,7 +20,7 @@ namespace Starvation
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
 
         }

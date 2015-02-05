@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -13,7 +12,7 @@ namespace Starvation
     class InGame : IGameState
     {
         public List<IEntity> entities { get; set; }
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
             entities = new List<IEntity>();
             entities.Add(new Player());
@@ -22,7 +21,7 @@ namespace Starvation
 
             foreach(IEntity entity in entities)
             {
-                entity.Load(content);
+                entity.Load(g);
             }
         }
 
@@ -34,11 +33,11 @@ namespace Starvation
             }            
         }
         
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
             foreach (IEntity entity in entities)
             {
-                entity.Draw(spriteBatch);
+                entity.Draw(g);
             }
         }
     }

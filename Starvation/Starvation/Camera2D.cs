@@ -68,6 +68,19 @@ namespace Starvation
             {
                 position.Y += 10;
             }
+            if (g.InManager.IsKeyPressed(Keys.Down))
+            {
+                position.Y -= 10;
+            }
+
+            if (g.InManager.IsKeyPressed(Keys.Left))
+            {
+                position.X += 10;
+            }
+            if (g.InManager.IsKeyPressed(Keys.Right))
+            {
+                position.X -= 10;
+            }
         }
 
         private float ClampAngle(float radians)

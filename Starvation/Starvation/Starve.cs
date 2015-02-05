@@ -12,7 +12,9 @@ namespace Starvation
     public class Starve : Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public SpriteBatch spriteBatch;
+
+        public AssetManager assetManager { get; set; }
 
         IGameState gameState;
 
@@ -36,6 +38,7 @@ namespace Starvation
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            assetManager = new AssetManager();
 
             gameState = new MapEditor();
 
@@ -57,7 +60,9 @@ namespace Starvation
 
             // TODO: use this.Content to load your game content here
 
-            gameState.Load(this.Content);
+            assetManager.Load(this);
+
+            gameState.Load(this);
         }
 
         /// <summary>
@@ -101,7 +106,7 @@ namespace Starvation
             // TODO: Add your drawing code here
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null, camera.Transform);
-            gameState.Draw(spriteBatch);
+            gameState.Draw(this);
             spriteBatch.End();
 
             base.Draw(gameTime);

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -17,21 +16,20 @@ namespace Starvation
         public string tag = "Player";
 
         private string AssetName { get; set; }
-        private Texture2D playerSprite;
+        public Asset asset { get; set; }
 
-        public void Load(ContentManager content)
+        public void Load(Starve g)
         {
             Position = new Vector2(10, 10);
 
             AssetName = "Player";
-            playerSprite = content.Load<Texture2D>(AssetName);
+
+            asset = g.assetManager.GetAssetData(AssetName);
         }
 
         public void Update(Starve g, GameTime gameTime)
         {
             Input(g);
-
-            
         }
 
         private void Input(Starve g)
@@ -55,15 +53,12 @@ namespace Starvation
             if (g.InManager.IsKeyPressed(Keys.D))
             {
                 Position = new Vector2(Position.X + 10, Position.Y);
-            }
-
-
-            
+            }            
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(Starve g)
         {
-            spriteBatch.Draw(playerSprite, Position, Color.White);
+            g.spriteBatch.Draw(asset.Texture, Position, new Rectangle((int)asset.Position.X, (int)asset.Position.Y, asset.Width, asset.Height), Color.White);
         }
     }
 }
